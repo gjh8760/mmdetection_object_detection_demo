@@ -1,0 +1,2 @@
+Main: 각 문서마다 train 9 / test 1
+Main_unseen: train 문서 10개(450) / test 문서 2개(60)

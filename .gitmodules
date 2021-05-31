@@ -1,3 +1,4 @@
 [submodule "mmdetection"]
 	path = mmdetection
 	url = https://github.com/open-mmlab/mmdetection.git
+	branch = v1.2.0

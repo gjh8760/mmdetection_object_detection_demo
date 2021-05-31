@@ -193,7 +193,7 @@ test_cfg = dict(
         mask_thr_binary=0.5))
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '/content/drive/My Drive/Mmdetection/'
+data_root = '/content/mmdetection_object_detection_demo/mmdetection/data/VOCdevkit/'#drive/My Drive/Mmdetection/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -226,18 +226,18 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
-        ann_file='/content/drive/My Drive/chunk.json',
-        img_prefix='/content/drive/My Drive/chunk_images/',
+        ann_file=data_root + 'VOC2007/train.json', #drive/My Drive/chunk.json',
+        img_prefix=data_root + 'VOC2007/JPEGImages/', #drive/My Drive/chunk_images/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         ann_file=data_root + 'VOC2007/test.json',
-        img_prefix=data_root + 'VOC2007/Test/',
+        img_prefix=data_root + 'VOC2007/JPEGImages/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         ann_file=data_root + 'VOC2007/test.json',
-        img_prefix=data_root + 'VOC2007/Test/',
+        img_prefix=data_root + 'VOC2007/JPEGImages/',
         pipeline=test_pipeline))
 # evaluation = dict(interval=1, metric=['bbox'])
 # optimizer

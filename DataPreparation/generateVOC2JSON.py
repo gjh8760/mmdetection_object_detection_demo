@@ -121,11 +121,11 @@ def generateVOC2Json(rootDir,xmlFiles):
   # Save the final JSON file
   # jsonString = json.dumps(attrDict)
   jsonString = json.dumps(attrDict, indent = 4, sort_keys=True)
-  with open("../data/VOC2007/coco.json", "w") as f: #"/content/drive/My Drive/ICDAR 13 dataset/coco.json", "w") as f:
+  with open("../data/VOC2007/test.json", "w") as f: #"/content/drive/My Drive/ICDAR 13 dataset/coco.json", "w") as f:
     f.write(jsonString)
 
 # Path to the txt file (see at the top of this script)
-trainFile = "../data/VOC2007/coco.txt"#"/content/drive/My Drive/ICDAR 13 dataset/coco.txt"
+trainFile = "../data/VOC2007/ImageSets/Main/test.txt"#"/content/drive/My Drive/ICDAR 13 dataset/coco.txt"
 trainXMLFiles = list()
 with open(trainFile, "r") as f:
 	for line in f:
@@ -138,3 +138,6 @@ rootDir = "../data/VOC2007/Annotations"#"/content/drive/My Drive/ICDAR 13 datase
 
 # Start execution
 generateVOC2Json(rootDir, trainXMLFiles)
+
+
+

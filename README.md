@@ -25,6 +25,7 @@ conda activate envName
 git clone --recurse-submodules $[Git-address]
 
 cd mmdetection
+pip install -q mmcv terminaltables
 pip install -r requirements/build.txt
 pip install "git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI"
 

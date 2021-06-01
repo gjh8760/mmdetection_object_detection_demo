@@ -59,7 +59,7 @@ def generateVOC2Json(rootDir,xmlFiles,cocoName,dstDir,startId):
         doc = xmltodict.parse(open(annotation_path).read())
         int2filename[image_id] = str(doc['annotation']['filename']) #ADD
         # image['file_name'] = str(doc['annotation']['filename'])
-        image['file_name'] = str(image_id)
+        image['file_name'] = '%d.png'%(image_id)
         image['height'] = int(doc['annotation']['size']['height'])
         image['width'] = int(doc['annotation']['size']['width'])
         image['id'] = image_id

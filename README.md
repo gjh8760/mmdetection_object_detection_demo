@@ -20,24 +20,31 @@ Further instruction on how to create your own datasets, read the tutorials
 
 ### conda env setting
 conda create -n envName python=3.7 -y
+
 conda activate envName
 
 git clone --recurse-submodules $[Git-address]
 
 cd mmdetection
+
 pip install -q mmcv terminaltables
+
 pip install -r requirements/build.txt
+
 pip install "git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI"
 
 conda config --add channels conda-forge
+
 conda install cudatoolkit-dev
 
 python setup.py install
+
 python setup.py develop
 
 pip install -r requirements.txt
 
 pip install pillow==6.2.1
+
 pip install mmcv==0.4.3
 
 ### Folder setting

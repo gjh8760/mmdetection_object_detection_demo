@@ -16,11 +16,13 @@ Further instruction on how to create your own datasets, read the tutorials
 - [How to train an object detection model with mmdetection](https://www.dlology.com/blog/how-to-train-an-object-detection-model-with-mmdetection/) - Custom Pascal VOC dataset.
 - [How to create custom COCO data set for object detection](https://www.dlology.com/blog/how-to-create-custom-coco-data-set-for-object-detection/) - Custom COCO dataset.
 
-### Note: most of the codes in DataPreparation are from [CascadeTabNet](https://github.com/DevashishPrasad/CascadeTabNet)
+#### Note: most of the codes in DataPreparation are from [CascadeTabNet](https://github.com/DevashishPrasad/CascadeTabNet)
 
-## conda env setting
+### conda env setting
 conda create -n envName python=3.7 -y
 conda activate envName
+
+git clone --recurse-submodules $[Git-address]
 
 cd mmdetection
 pip install -r requirements/build.txt
@@ -36,4 +38,19 @@ pip install -r requirements.txt
 
 pip install pillow==6.2.1
 pip install mmcv==0.4.3
+
+### Folder setting
+mkdir data
+(VOC data to COCO data, by running DataPreparation/generateVOC2JSON.py)
+data
+    /Annotations
+    /JPEGImages
+    /ImageSets/Main
+    trainval.json
+    test.json
+
+
+mkdir Model
+(set TableBank Latex (TD) pretrained model as pretraining model)
+Model/cascade_mask_rcnn_hrnetv2p_w32_20e_eunji/epoch_14.pth
 

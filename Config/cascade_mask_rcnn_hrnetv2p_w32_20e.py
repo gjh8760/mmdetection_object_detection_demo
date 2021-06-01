@@ -260,10 +260,10 @@ log_config = dict(
     ])
 # yapf:enable
 # runtime settings
-total_epochs = 36 #
+total_epochs = 12 #36, 36-24
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 work_dir = 'Model/cascade_mask_rcnn_hrnetv2p_w32_20e_eunji'
-load_from = None
-resume_from = 'Model/cascade_mask_rcnn_hrnetv2p_w32_20e_eunji/epoch_14.pth' #Table detection, fine-tuned on TableBank Latex
+resume_from = None # load_from
+load_from = 'Model/cascade_mask_rcnn_hrnetv2p_w32_20e_eunji/epoch_14.pth' #Table detection, fine-tuned on TableBank Latex # resume_from
 workflow = [('train', 1)]

@@ -53,13 +53,16 @@ conda env에 nvcc 설치를 위한 cudatoolkit 설치
 > (VOC data to COCO data, by running DataPreparation/generateVOC2JSON.py)  
 > > Annotations  
 > > > *.xml  
+
 > > JPEGImages  
 > > > *.jpg or *.png  
+>
 > > ImageSets/Main  
 > > > trainval.json   
 > > > test.json  
+>
 > Model  
 > (set TableBank Latex (TD) pretrained model as pretraining model)  
-> cascade_mask_rcnn_hrnetv2p_w32_20e_eunji  
-> > epoch_14.pth (TableBank Latex pretrained model, from CascadeTabNet)  
+> > cascade_mask_rcnn_hrnetv2p_w32_20e_eunji  
+> > > epoch_14.pth (TableBank Latex pretrained model, from CascadeTabNet)  
 

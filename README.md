@@ -49,20 +49,20 @@ conda env에 nvcc 설치를 위한 cudatoolkit 설치
     pip install mmcv==0.4.3  
 ```
 ### Folder setting
-> data  
-> (VOC data to COCO data, by running DataPreparation/generateVOC2JSON.py)  
-> > Annotations  
-> > > *.xml  
+Project   
+ ├─data  
+ │  ├─Annotations  
+ │  │  ├─*.xml  
+ │  ├─JPEGImages
+ │  │  ├─*.jpg/png   
+ │  └─ImageSets
+ │     └─Main   
+ │        ├─trainval.json   
+ │        └─test.json   
+ └─Model  
+    └─cascade_mask_rcnn_hrnetv2p_w32_20e_eunji   
+       └─epoch_14.pth  
 
-> > JPEGImages  
-> > > *.jpg or *.png  
->
-> > ImageSets/Main  
-> > > trainval.json   
-> > > test.json  
->
-> Model  
-> (set TableBank Latex (TD) pretrained model as pretraining model)  
-> > cascade_mask_rcnn_hrnetv2p_w32_20e_eunji  
-> > > epoch_14.pth (TableBank Latex pretrained model, from CascadeTabNet)  
+data: VOC data to COCO data, by running DataPreparation/generateVOC2JSON.py  
+Model: set TableBank Latex (TD) pretrained model as pretrained model from CascadeTabNet
 

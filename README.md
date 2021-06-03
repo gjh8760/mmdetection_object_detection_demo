@@ -48,21 +48,44 @@ conda env에 nvcc 설치를 위한 cudatoolkit 설치
     pip install pillow==6.2.1  
     pip install mmcv==0.4.3  
 ```
+
 ### Folder setting
-Project   
+Project  
  ├─data  
- │  ├─Annotations  
- │  │  ├─*.xml  
- │  ├─JPEGImages
- │  │  ├─*.jpg/png   
- │  └─ImageSets
- │     └─Main   
- │        ├─trainval.json   
- │        └─test.json   
+ │  └─VOC2007  
+ │     ├─Annotations  
+ │     │  └─*.xml  
+ │     ├─JPEGImages  
+ │     │  └─*.jpg/png  
+ │     └─ImageSets  
+ │        └─Main  
+ │           ├─trainval.json  
+ │           └─test.json  
  └─Model  
-    └─cascade_mask_rcnn_hrnetv2p_w32_20e_eunji   
+    └─cascade_mask_rcnn_hrnetv2p_w32_20e_eunji  
        └─epoch_14.pth  
 
 data: VOC data to COCO data, by running DataPreparation/generateVOC2JSON.py  
-Model: set TableBank Latex (TD) pretrained model as pretrained model from CascadeTabNet
+Model: set TableBank Latex (TD) pretrained model as pretrained model from CascadeTabNet  
 
+1. Locate images and VOC labels in data/VOC2007/Annotations and JPEGImages  
+2. make trainval/test lists  
+```
+    cd ./DataPreparation  
+    sh ./generate_traintest.sh  
+    python divide_traintest.py --rate=0.9(train number portion)  
+```
+3. convert VOC labels to COCO label  
+```
+    python generateVOC2JSON.py  
+```
+
+### Train model
+```
+    python ./mmdetection/tools/train.py Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py --gpu-ids=$GPU_NUM
+```
+
+### Test model (detection)
+```
+    python test.py --data_dir=./data/VOC2007 --config_dir=./Config --epoch=$FINAL_EPOCH --gpu=$GPU_NUM
+```

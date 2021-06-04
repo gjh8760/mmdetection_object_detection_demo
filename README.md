@@ -50,21 +50,22 @@ conda env에 nvcc 설치를 위한 cudatoolkit 설치
 ```
 
 ### Folder setting
+```
 Project  
- ├─data  
- │  └─VOC2007  
- │     ├─Annotations  
- │     │  └─*.xml  
- │     ├─JPEGImages  
- │     │  └─*.jpg/png  
- │     └─ImageSets  
- │        └─Main  
- │           ├─trainval.json  
- │           └─test.json  
- └─Model  
-    └─cascade_mask_rcnn_hrnetv2p_w32_20e_eunji  
-       └─epoch_14.pth  
-
+├── data  
+│   └── VOC2007  
+│       ├── Annotations  
+│       │   └── *.xml  
+│       ├── JPEGImages  
+│       │   └── *.jpg/png  
+│       └── ImageSets  
+│           └── Main  
+│               ├── trainval.json  
+│               └── test.json  
+└── Model  
+    └── cascade_mask_rcnn_hrnetv2p_w32_20e_eunji  
+        └── epoch_14.pth  
+```
 data: VOC data to COCO data, by running DataPreparation/generateVOC2JSON.py  
 Model: set TableBank Latex (TD) pretrained model as pretrained model from CascadeTabNet  
 

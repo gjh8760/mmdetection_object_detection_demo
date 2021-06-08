@@ -33,12 +33,17 @@ mmdetection dependency 설치
     cd mmdetection  
     pip install -q mmcv terminaltables  
     pip install -r requirements/build.txt  
+    pip install torch==1.4.0+cu100 torchvision==0.5.0+cu100 -f https://download.pytorch.org/whl/torch_stable.html  
 ```
 conda env에 nvcc 설치를 위한 cudatoolkit 설치  
 ```
     pip install "git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI"  
     conda config --add channels conda-forge  
     conda install cudatoolkit-dev  
+```
+setup.py 내용 변경  
+```
+    torch.utils.cpp_extension.CUDA_HOME = '/data2/jane/anaconda3/envs/cctab/pkgs/cuda-toolkit' 추가  
 ```
 다시 mmdetection dependency 설치  
 ```

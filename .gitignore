@@ -9,3 +9,4 @@ data/*
 .idea/workspace.xml
 .idea/*
 mmdetection
+Result/*

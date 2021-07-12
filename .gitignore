@@ -6,3 +6,6 @@ experiments/
 Model/
 mmdetection/*
 data/*
+.idea/workspace.xml
+.idea/*
+mmdetection
